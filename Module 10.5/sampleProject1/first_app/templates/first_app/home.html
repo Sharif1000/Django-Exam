@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is App home page</h1>
+    <h2>Name of Author : {{author}}</h2>
+    <h2>Name of Author Upper : {{author | upper }}</h2>
+    <h2>Name of Author lower : {{author | lower }}</h2>
+    <h2>Name of Author capfirst : {{author | capfirst }}</h2>
+    <h2>Age of Author : {{age}}</h2>
+    <h2>Length of list: {{lst | length }}</h2>
+    <h2>First item of list: {{lst | first }}</h2>
+    <h2>Last item of list: {{lst | last }}</h2>
+    <h2>Join the list: {{lst | join:"-"}}</h2>
+    <h2>Slice the list: {{lst | slice:":2"}}</h2>
+    <h2>Today Date: {{today | date:"D d M Y"}}</h2>
+    <h2>Time: : {{today | time:"H:i"}}</h2>
+    <h2>{{"My name is sharif. I love programming" | wordcount}}</h2>
+    <h2>{{"My name is sharif. I love programming" | title}}</h2>
+    <h2>{{"My name is sharif. I love programming" | truncatechars:20}}</h2>
+</body>
+</html>
