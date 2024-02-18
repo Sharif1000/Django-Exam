@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block AboutUS %}
+
+<style>
+  .container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text {
+    flex: 1;
+    padding: 0 80px;
+  }
+
+  .image {
+    flex: 1;
+    padding: 0 40px;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<div class ="container">
+  <div class="text">
+    <h1>CP Restaurant</h1>
+    <p>
+      Discover CP Restaurant, a culinary gem in the heart of Dhaka, Bangladesh, under the visionary leadership of CEO Md Shariful Islam. We blend traditional flavors with modern techniques, offering a unique dining experience. With a commitment to quality and hospitality, we strive to exceed expectations with every dish. Join us at CP Restaurant for a journey of exquisite flavors and impeccable service in the vibrant city of Dhaka.
+    </p>
+  </div>
+  <div class="image">
+    <img src="{% static 'images/aboutUs.jpg' %}" alt="About Us"/>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block HomeContent %}
+<style>
+  .container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text {
+    flex: 1;
+    padding: 0 70px;
+  }
+
+  .image {
+    flex: 1;
+    height: 60%; 
+    padding: 0 40px;
+  }
+</style>
+<div class="container">
+  <div class="text">
+    <h1>CP Restaurant</h1>
+    <p>
+      Welcome to CP Restaurant, where culinary passion meets exceptional dining.
+      Indulge in a symphony of flavors crafted with care and creativity,
+      offering a fusion of global cuisines. From tantalizing starters to
+      decadent desserts, each dish tells a story of quality ingredients and
+      culinary expertise. Experience gastronomic delight with us today!
+    </p>
+  </div>
+  <div class="image">
+    <img src="{% static 'Homepage.jpg' %}" alt="HomePage Image" />
+  </div>
+</div>
+{% endblock %}
