@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>This is about page </h1>
+<h3>Name : {{ name }}</h3>
+<h3>Email : {{ email }}</h3>
+<h3>Roll Numher : {{ roll_number }}</h3>
+<h3>Age : {{ age }}</h3>
+<h3>CGPA : {{ cgpa }}</h3>
+<h3>My Birthday : {{ birthday }}</h3>
+<h3>My Favorite Color : {{ color }}</h3>
+<h3>My Favorite Food : 
+    {% for i in food %}
+    {{ i }}
+    {% endfor %}
+    </h3>
+<h3>About Myself :  {{ details }}</h3>
+{% endblock %}
+
+
