@@ -23,26 +23,30 @@ def signup(request):
         return redirect('profile')
 
 def user_login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request=request, data=request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['username']
-            userpass = form.cleaned_data['password']
-            user = authenticate(username=name, password=userpass)
-            if user is not None:
-                login(request, user)
-                messages.success(request, 'Logged In Successfully')
-                return redirect('profile')
+    if not request.user.is_authenticated:
+        if request.method == 'POST':
+            form = AuthenticationForm(request=request, data=request.POST)
+            if form.is_valid():
+                name = form.cleaned_data['username']
+                userpass = form.cleaned_data['password']
+                user = authenticate(username=name, password=userpass)
+                if user is not None:
+                    login(request, user)
+                    messages.success(request, 'Logged In Successfully')
+                    return redirect('profile')
+        else:
+            form = AuthenticationForm()
+        return render(request, './login.html', {'form': form})
     else:
-        form = AuthenticationForm()
-    return render(request, './login.html', {'form': form})
+        messages.success(request, 'You are already Logged In')
+        return redirect('profile')
 
 
 def profile(request):
     if request.user.is_authenticated:
         return render(request, './profile.html')
     else:
-        return redirect('signup')
+        return redirect('login')
 
 def user_logout(request):
     logout(request)
